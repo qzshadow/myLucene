@@ -24,6 +24,14 @@ public class LuceneGUI {
     private JTextField Search_SW_TextField;
     private JButton Search_searchButton;
     private JTable Index_Table;
+    private JTextField Search_field_textField;
+    private JTextField Search_repeat_textField;
+    private JTextField Search_queries_textField;
+    private JCheckBox rawCheckBox;
+    private JTextArea Search_textArea;
+    private JTable Search_table;
+    private JTextField Search_query_textField;
+    private JTextField Search_paging_textField;
 
     public LuceneGUI() {
         Index_DocDir_browseButton.addActionListener(new ActionListener() {
