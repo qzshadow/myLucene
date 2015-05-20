@@ -1,10 +1,9 @@
 import cn.scut.qinzhou.IndexFiles;
-import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
+import cn.scut.qinzhou.SearchFiles;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
 import java.nio.file.*;
 
 /**
@@ -20,7 +19,7 @@ public class LuceneGUI {
     private JCheckBox updateOnlyCheckBox;
     private JTextPane Index_textPane;
     private JTextField Search_IdxDir_TextField;
-    private JButton Search_browseButton;
+    private JButton Search_IdxDir_browseButton;
     private JTextField Search_SW_TextField;
     private JButton Search_searchButton;
     private JTable Index_Table;
@@ -30,8 +29,8 @@ public class LuceneGUI {
     private JCheckBox rawCheckBox;
     private JTextArea Search_textArea;
     private JTable Search_table;
-    private JTextField Search_query_textField;
-    private JTextField Search_paging_textField;
+    private JTextField Search_MaxHits_textField;
+    private JButton Search_queries_browerButton;
 
     public LuceneGUI() {
         Index_DocDir_browseButton.addActionListener(new ActionListener() {
@@ -80,7 +79,7 @@ public class LuceneGUI {
             }
         });
 
-        Search_browseButton.addActionListener(new ActionListener() {
+        Search_IdxDir_browseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser chooser = new JFileChooser();
@@ -88,7 +87,19 @@ public class LuceneGUI {
                 chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 chooser.setAcceptAllFileFilterUsed(false);
                 if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                    Index_IdxDir_TextField.setText(chooser.getSelectedFile().toString());
+                    Search_IdxDir_TextField.setText(chooser.getSelectedFile().toString());
+                }
+            }
+        });
+        Search_queries_browerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser chooser = new JFileChooser();
+                chooser.setDialogTitle("queries File Chooser");
+                chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                chooser.setAcceptAllFileFilterUsed(false);
+                if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    Search_queries_textField.setText(chooser.getSelectedFile().toString());
                 }
             }
         });
@@ -96,12 +107,24 @@ public class LuceneGUI {
         Search_searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                String index = Search_IdxDir_TextField.getText();
+                String field = Search_field_textField.getText();
+                String queries = Search_queries_textField.getText();
+                String queryString = Search_SW_TextField.getText();
+                int repeat = Integer.parseInt(Search_repeat_textField.getText().equals("null") ? "0" : Search_repeat_textField.getText());
+                boolean raw = rawCheckBox.isSelected();
+                int MaxHits = Integer.parseInt(Search_MaxHits_textField.getText().equals("null") ? "10" : Search_MaxHits_textField.getText());
+                MaxHits = MaxHits < 1 ? 1 : MaxHits;
+                SearchFiles.set_doc_show(Search_textArea.getDocument());
+                SearchFiles.Search(index, field, queries, repeat, raw, queryString, MaxHits);
+                String[] columnNames = {"path", "score", "shareIndex"};
+                Search_table = new JTable(SearchFiles.data, columnNames);
+                Search_table.setVisible(true);
             }
         });
+
+
     }
-
-
 
     private static void createAndShowGUI(){
         JFrame frame = new JFrame("LuceneGUI");
