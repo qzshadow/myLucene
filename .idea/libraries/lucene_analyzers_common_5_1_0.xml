@@ -5,6 +5,7 @@
       <root url="jar://$PROJECT_DIR$/lib/lucene-core-5.1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lucene-demo-5.1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lucene-queryparser-5.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-smartcn-5.1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

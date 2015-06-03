@@ -2,6 +2,7 @@ import cn.scut.qinzhou.IndexFiles;
 import cn.scut.qinzhou.SearchFiles;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.file.*;
@@ -28,9 +29,9 @@ public class LuceneGUI {
     private JTextField Search_queries_textField;
     private JCheckBox rawCheckBox;
     private JTextArea Search_textArea;
-    private JTable Search_table;
     private JTextField Search_MaxHits_textField;
     private JButton Search_queries_browerButton;
+    private JScrollPane table_ScrollPane;
 
     public LuceneGUI() {
         Index_DocDir_browseButton.addActionListener(new ActionListener() {
@@ -118,8 +119,10 @@ public class LuceneGUI {
                 SearchFiles.set_doc_show(Search_textArea.getDocument());
                 SearchFiles.Search(index, field, queries, repeat, raw, queryString, MaxHits);
                 String[] columnNames = {"path", "score", "shareIndex"};
-                Search_table = new JTable(SearchFiles.data, columnNames);
-                Search_table.setVisible(true);
+                JTable Search_table = new JTable(SearchFiles.data, columnNames);
+                table_ScrollPane.setViewportView(Search_table);
+//                Search_table.setRowHeight(50);
+
             }
         });
 
