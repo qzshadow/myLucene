@@ -9,7 +9,7 @@ jdk 1.8(I have not try jdk 1.7)
 
 using
 
-java -jar mylucene.jar
+java -jar myLucene.jar
 
 to run
 
