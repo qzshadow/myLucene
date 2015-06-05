@@ -1,7 +1,7 @@
 # myLucene
 a project aim at providing GUI for the basic function of lucene
 
-now it support Chinese or English document index and search
+now it support Chinese or English documents indexing and searching
 
 runtime
 
@@ -12,3 +12,6 @@ using
 java -jar mylucene.jar
 
 to run
+
+note:
+the documents should encoded in UTF-8!!!
