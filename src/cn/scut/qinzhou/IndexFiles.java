@@ -30,6 +30,7 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Date;
+import java.util.Map;
 
 
 /** Index all text files under a directory.
@@ -85,7 +86,7 @@ public class IndexFiles {
             // you're done adding documents to it):
             //
             // writer.forceMerge(1);
-
+            doc_show.insertString(doc_show.getLength(),writer.numDocs()+" files have been indexed\n",new SimpleAttributeSet());
             writer.close();
 
             Date end = new Date();

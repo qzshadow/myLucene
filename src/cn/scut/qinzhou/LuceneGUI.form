@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="LuceneGUI">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="cn.scut.qinzhou.LuceneGUI">
   <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
@@ -17,7 +17,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="166a3" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="166a3" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="IndexFiles"/>
@@ -117,19 +117,6 @@
                   </scrollpane>
                 </children>
               </grid>
-              <scrollpane id="d99ff">
-                <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties/>
-                <border type="none"/>
-                <children>
-                  <component id="e9971" class="javax.swing.JTable" binding="Index_Table">
-                    <constraints/>
-                    <properties/>
-                  </component>
-                </children>
-              </scrollpane>
             </children>
           </grid>
           <grid id="50cec" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -242,9 +229,7 @@
                   </component>
                   <component id="5f873" class="javax.swing.JTextField" binding="Search_MaxHits_textField">
                     <constraints>
-                      <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="-1"/>
-                      </grid>
+                      <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <text value="10"/>
@@ -268,12 +253,10 @@
                   </component>
                   <component id="dcfac" class="javax.swing.JTextField" binding="Search_repeat_textField">
                     <constraints>
-                      <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="-1"/>
-                      </grid>
+                      <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="10"/>
+                      <text value="0"/>
                     </properties>
                   </component>
                   <component id="9d8ed" class="javax.swing.JLabel">
@@ -286,11 +269,10 @@
                   </component>
                   <component id="51661" class="javax.swing.JTextField" binding="Search_field_textField">
                     <constraints>
-                      <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="-1"/>
-                      </grid>
+                      <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
+                      <enabled value="true"/>
                       <text value="contents"/>
                     </properties>
                   </component>

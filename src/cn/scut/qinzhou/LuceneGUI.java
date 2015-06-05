@@ -1,3 +1,5 @@
+package cn.scut.qinzhou;
+
 import cn.scut.qinzhou.IndexFiles;
 import cn.scut.qinzhou.SearchFiles;
 
@@ -23,7 +25,6 @@ public class LuceneGUI {
     private JButton Search_IdxDir_browseButton;
     private JTextField Search_SW_TextField;
     private JButton Search_searchButton;
-    private JTable Index_Table;
     private JTextField Search_field_textField;
     private JTextField Search_repeat_textField;
     private JTextField Search_queries_textField;

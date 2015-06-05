@@ -3,13 +3,10 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-common-5.1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lucene-core-5.1.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/lucene-demo-5.1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lucene-queryparser-5.1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-smartcn-5.1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.ideaLibSources/lucene-demo-5.1.0-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
